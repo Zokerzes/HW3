@@ -24,19 +24,24 @@ namespace hw3
         длину стороны квадрата, символ.*/
         public void quadDrow(char ch,int qL) 
         {
-            for (int i = 0; i < qL; i++) { Console.Write(ch.ToString()); };
-            Console.WriteLine();
-            for (int i = 0; i < qL-2; i++) 
+            
+            if (quadLenght == 1) Console.WriteLine(ch);
+            else
             {
-                Console.Write(ch);
-                for (int j = 0; j < qL - 2; j++)
+                for (int i = 0; i < qL; i++) { Console.Write(ch.ToString()); };
+                Console.WriteLine();
+                for (int i = 0; i < qL - 2; i++)
                 {
-                    Console.Write(" ");
+                    Console.Write(ch);
+                    for (int j = 0; j < qL - 2; j++)
+                    {
+                        Console.Write(" ");
+                    }
+                    Console.WriteLine(ch);
                 }
-                Console.WriteLine(ch);
+                for (int i = 0; i < qL; i++) { Console.Write(ch.ToString()); };
+                Console.WriteLine();
             }
-            for (int i = 0; i < qL; i++) { Console.Write(ch.ToString()); };
-            Console.WriteLine();
         }
 
         public void StartTask1()
@@ -45,9 +50,9 @@ namespace hw3
             ch = Convert.ToChar(Console.ReadLine());
             Console.WriteLine("введите длину границ фигуры");
             quadLenght = Convert.ToInt32(Console.ReadLine());
+            if (quadLenght <= 1) quadLenght = 1;
             Console.WriteLine();
             quadDrow(ch, quadLenght);
-            
         }
     }
     class Task2

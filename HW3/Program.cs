@@ -16,15 +16,15 @@ namespace hw3
 {
     class Task1
     {
-            char ch;
-            int quadLenght;
+        char ch;
+        int quadLenght;
 
         /*Напишите метод, который отображает квадрат из
         некоторого символа. Метод принимает в качестве параметра: 
         длину стороны квадрата, символ.*/
-        public void quadDrow(char ch,int qL) 
+        public void quadDrow(char ch, int qL)
         {
-            
+
             if (quadLenght == 1) Console.WriteLine(ch);
             else
             {
@@ -57,10 +57,28 @@ namespace hw3
     }
     class Task2
     {
-        /**/
+        /*Напишите метод, который проверяет является ли
+        переданное число «палиндромом». Число передаётся в
+        качестве параметра. Если число палиндром нужно вер-
+        нуть из метода true, иначе false.*/
+        string p;
+        public bool polindrom(string p)
+        {
+            int l = p.Length;
+            for (int i = 0, j=l; i < l; i++,j--)
+            {
+                if (p[i] != p[j-1]) return false;
+            }
+
+            return true;
+        }
+
         public void StartTask2()
         {
-           
+            Console.WriteLine("введите целое число (палиндром или нет):");
+            p = Console.ReadLine();
+            Console.WriteLine();
+            Console.WriteLine(polindrom(p));
         }
     }
     class Task3
@@ -68,7 +86,7 @@ namespace hw3
         /**/
         public void StartTask3()
         {
-            
+
         }
     }
     class Task4
@@ -87,7 +105,7 @@ namespace hw3
         public void StartTask5()
 
         {
-            
+
         }
     }
     class Task6
@@ -95,7 +113,7 @@ namespace hw3
         /*.*/
         public void StartTask6()
         {
-            
+
         }
     }
     class Task7
@@ -104,7 +122,7 @@ namespace hw3
 		*/
         public void StartTask7()
         {
-            
+
         }
     }
     class HomeWork

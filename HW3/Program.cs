@@ -16,26 +16,38 @@ namespace hw3
 {
     class Task1
     {
-
+            char ch;
+            int quadLenght;
 
         /*Напишите метод, который отображает квадрат из
         некоторого символа. Метод принимает в качестве параметра: 
         длину стороны квадрата, символ.*/
-        public void quadDrow() 
+        public void quadDrow(char ch,int qL) 
         {
-            
+            for (int i = 0; i < qL; i++) { Console.Write(ch.ToString()); };
+            Console.WriteLine();
+            for (int i = 0; i < qL-2; i++) 
+            {
+                Console.Write(ch);
+                for (int j = 0; j < qL - 2; j++)
+                {
+                    Console.Write(" ");
+                }
+                Console.WriteLine(ch);
+            }
+            for (int i = 0; i < qL; i++) { Console.Write(ch.ToString()); };
+            Console.WriteLine();
         }
 
         public void StartTask1()
         {
-            char ch;
-            int quadLenght;
             Console.WriteLine("введите символ границ фигуры");
             ch = Convert.ToChar(Console.ReadLine());
             Console.WriteLine("введите длину границ фигуры");
             quadLenght = Convert.ToInt32(Console.ReadLine());
-
-
+            Console.WriteLine();
+            quadDrow(ch, quadLenght);
+            
         }
     }
     class Task2

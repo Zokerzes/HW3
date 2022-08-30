@@ -64,8 +64,7 @@ namespace hw3
         string p;
         public bool polindrom(string p)
         {
-            int l = p.Length;
-            for (int i = 0, j=l; i < l; i++,j--)
+            for (int i = 0, j= p.Length; i < p.Length; i++,j--)
             {
                 if (p[i] != p[j-1]) return false;
             }
@@ -83,9 +82,39 @@ namespace hw3
     }
     class Task3
     {
-        /**/
+        /*Напишите метод, фильтрующий массив на основании
+        переданных параметров. Метод принимает параметры:
+        оригинальный_массив, массив_с_данными_для_филь-
+        трации.Метод возвращает оригинальный массив без элемен-
+        тов, которые есть в массиве для фильтрации.*/
+
+        string startStr, filtrStr;
+        int[] startArr, filtrArr;
+
+        
         public void StartTask3()
         {
+            Console.WriteLine("введите массив значений через пробел):");
+            startStr = Console.ReadLine();
+            if (startStr == "") startStr = "0";
+            Console.WriteLine("введите фильтр массив значений через пробел):");
+            filtrStr = Console.ReadLine();
+            if (filtrStr == "") filtrStr = "0";
+
+            string[] strArr = startStr.Split(" ".ToCharArray());
+            startArr = new int[strArr.Length];
+            for (int i = 0; i < strArr.Length; i++)
+            {
+                startArr[i] = int.Parse(strArr[i]);
+            }
+
+            string[] filArr = filtrStr.Split(" ".ToCharArray());
+            filtrArr = new int[filArr.Length];
+            for (int i = 0; i < filArr.Length; i++)
+            {
+                filtrArr[i] = int.Parse(filArr[i]);
+            }
+
 
         }
     }

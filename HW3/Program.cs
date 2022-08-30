@@ -89,7 +89,7 @@ namespace hw3
         тов, которые есть в массиве для фильтрации.*/
 
         string startStr, filtrStr;
-        int[] startArr, filtrArr;
+        int[] startArr, filtrArr, resultArr;
 
         
         public void StartTask3()
@@ -114,8 +114,34 @@ namespace hw3
             {
                 filtrArr[i] = int.Parse(filArr[i]);
             }
-
-
+            int count = 0;
+            for (int i = 0; i < startArr.Length; i++)
+            {
+                for (int j = 0; j < filtrArr.Length; j++)
+                {
+                    if (startArr[i] == filtrArr[j])
+                    { 
+                        count++;
+                        break;
+                    }
+                }
+            }
+            resultArr = new int[startArr.Length - count];
+            
+            for (int i = 0, ii=0; i < startArr.Length; i++,ii++)
+            {
+                bool flag = false;
+                for (int j = 0; j < filtrArr.Length; j++)
+                {
+                    if (startArr[i] == filtrArr[j])
+                    {
+                        flag = true;
+                        break;
+                    }
+                }
+                if (flag)
+                resultArr[ii]= startArr[i];
+            }
         }
     }
     class Task4

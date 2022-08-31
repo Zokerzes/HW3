@@ -105,15 +105,23 @@ namespace hw3
             startArr = new int[strArr.Length];
             for (int i = 0; i < strArr.Length; i++)
             {
-                startArr[i] = int.Parse(strArr[i]);
+                Console.Write(startArr[i] = int.Parse(strArr[i]));
+                Console.Write(" ");
             }
+            Console.WriteLine("<- исходный массив");
+            Console.WriteLine();
+            
 
             string[] filArr = filtrStr.Split(" ".ToCharArray());
             filtrArr = new int[filArr.Length];
             for (int i = 0; i < filArr.Length; i++)
             {
-                filtrArr[i] = int.Parse(filArr[i]);
+                Console.Write(filtrArr[i] = int.Parse(filArr[i]));
+                Console.Write(" ");
             }
+            Console.WriteLine("<- массив фильтр");
+            Console.WriteLine();
+
             int count = 0;
             for (int i = 0; i < startArr.Length; i++)
             {
@@ -128,20 +136,26 @@ namespace hw3
             }
             resultArr = new int[startArr.Length - count];
             
-            for (int i = 0, ii=0; i < startArr.Length; i++,ii++)
+            for (int i = 0, ii=0; i <  resultArr.Length; i++,ii++)
             {
                 bool flag = false;
                 for (int j = 0; j < filtrArr.Length; j++)
                 {
-                    if (startArr[i] == filtrArr[j])
+                    if (startArr[ii] == filtrArr[j])
                     {
                         flag = true;
                         break;
                     }
                 }
-                if (flag)
-                resultArr[ii]= startArr[i];
+                if (flag) ii++;
+                resultArr[i]= startArr[ii];
             }
+            foreach(var i in resultArr)
+            { 
+                Console.Write(i+" ");
+            }
+            Console.WriteLine("<- результат");
+            Console.ReadLine();
         }
     }
     class Task4

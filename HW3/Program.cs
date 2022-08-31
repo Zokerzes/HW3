@@ -270,28 +270,35 @@ namespace hw3
         string path;
         string descrip;
         string tel;
-        string e-mail;
+        string email;
         double balance=0;
         
         //вложеный класс товар
         class Product 
         {
-            public string Name { get; set; }
-            public string Description { get; set; }
+            public string name { get; set; }
+            public string description { get; set; }
             public double price { get; set; }
 
             Product() 
             {
-                this.Name = "prod0";
+                this.name = "prod0";
                 this.price = 0.0;
-                this.Description = "something virtual values";
+                this.description = "something virtual values";
             }
         }
-
+        
         Product []product= new Product[1];
 
-        public void acceptProduct() 
+        public void acceptProduct()
         {
+            Array.Resize(ref product,(product.Length)+1);
+            Console.WriteLine("enter name of product");
+            this.product[this.product.Length-1].name=Console.ReadLine();
+            Console.WriteLine("enter price of product");
+            (this.product[this.product.Length-1]).price=Convert.ToDouble(Console.ReadLine());
+            Console.WriteLine("enter Description of product");
+            this.product[this.product.Length-1].description=Console.ReadLine();
 
         }
 
@@ -327,7 +334,7 @@ namespace hw3
                     task4.StartTask4();
                     break;
                 case 5:
-                    Task5 task5 = new Task5();
+                    Task5_market task5 = new Task5_market();
                     task5.StartTask5();
                     break;
                 

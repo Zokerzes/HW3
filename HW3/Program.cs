@@ -160,14 +160,103 @@ namespace hw3
     }
     class Task4
     {
+        /*Создайте класс «Веб-сайт». Необходимо хранить в 
+        полях класса: название сайта, путь к сайту, описание 
+        сайта, ip адрес сайта. Реализуйте методы класса для ввода 
+        данных, вывода данных, реализуйте доступ к отдельным 
+        полям через методы класса. */
+        
+        string nameOfSite, pathOfSite, descripOfSite, ipOfSite;
+        // блок ввода
+        public void setName() 
+        {
+            Console.WriteLine("enter name of site");
+            this.nameOfSite=Console.ReadLine();
+        }
 
-        /**/
+        public void setPath() 
+        {
+            Console.WriteLine("enter path of site");
+            this.pathOfSite=Console.ReadLine();
+        }
+        public void setDescription() 
+        {
+            Console.WriteLine("enter description of site");
+            this.descripOfSite=Console.ReadLine();
+        }
+        public void setIp() 
+        {
+            Console.WriteLine("enter ip of site");
+            this.ipOfSite=Console.ReadLine();
+        }
+       
+
+        //блок вывода
+         public string getName() 
+        {
+            Console.WriteLine($"name of site {this.nameOfSite}");
+            return this.nameOfSite;
+        }
+
+        public string getPath() 
+        {
+            Console.WriteLine($"path of site {this.pathOfSite}");
+            return this.pathOfSite;
+        }
+        public string getDescription() 
+        {
+            Console.WriteLine($"description of site {this.descripOfSite}");
+            return this.descripOfSite;
+        }
+        public string getIp() 
+        {
+            Console.WriteLine($"ip of site {this.ipOfSite}");
+            return this.ipOfSite;
+        }
 
         public void StartTask4()
         {
+            int key;
+            do 
+            { 
+                 Console.WriteLine("записать:\n\tназвание - 1 \n\tпуть - 2 \n\tописание - 3\n\tip - 4"+
+                     "\nпрочитать:\n\tназвание - 5 \n\tпуть - 6 \n\tописание - 7\n\tip - 8");
+                key = Convert.ToInt32(Console.ReadLine());
+                switch (key)
+                {
+                    case 1:
+                        setName();
+                        break;
+                    case 2:
+                        setPath();
+                        break;
+                    case 3:
+                        setDescription();
+                        break;
+                    case 4:
+                        setIp();
+                        break;
+                    case 5:
+                        getName();
+                        break;
+                    case 6:
+                        getPath();
+                        break;
+                    case 7:
+                        getDescription();
+                        break;
+                    case 8:
+                        getIp();
+                        break;
 
+                    default:
+                        break;
+                }
+            }while (key>=1);
         }
     }
+    
+    
     class Task5
     {
         /**/

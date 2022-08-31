@@ -292,9 +292,10 @@ namespace hw3
 
         public void acceptProduct()
         {
-            Array.Resize(ref product,(product.Length)+1);
-            Console.WriteLine("enter name of product");
-            this.product[this.product.Length-1].name=Console.ReadLine();
+            int tempSize = this.product.Length;  //текущая длина масства
+            Array.Resize(ref product,tempSize+1); //добавляем элемент
+            Console.WriteLine("enter name of product"); 
+            this.product[tempSize].name=Console.ReadLine().ToString(); //запись имени продукта
             Console.WriteLine("enter price of product");
             (this.product[this.product.Length-1]).price=Convert.ToDouble(Console.ReadLine());
             Console.WriteLine("enter Description of product");
@@ -304,7 +305,7 @@ namespace hw3
 
         public void StartTask5()
         {
-
+            acceptProduct();
         }
     }
     

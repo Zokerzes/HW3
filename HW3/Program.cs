@@ -276,6 +276,7 @@ namespace hw3
         public void marketInfo() 
         {
             Console.WriteLine($"название {this.name}\nадрес {this.path}\nописание {this.descrip}\nтелефон {this.tel}\nE-mail{this.email}\nбаланс магазина {this.balance}");
+            Console.WriteLine(); Console.WriteLine();
         }
         public void setBalance(double _sb)
         {
@@ -284,6 +285,7 @@ namespace hw3
         public void getBalance()
         {
             Console.WriteLine($"баланс магазина {this.balance}");
+            Console.WriteLine();
         }
         public void addBalance(double _addb)
         {
@@ -314,9 +316,9 @@ namespace hw3
         {
             int tempSize = this.product.Length;  //текущая длина масства
             Product tempProduct = new Product("name", 1.1, "description");
-            Console.WriteLine(this.product.Length);
+            //Console.WriteLine(this.product.Length);
             Array.Resize(ref product, tempSize + 1); //добавляем элемент
-            Console.WriteLine(this.product.Length);
+            //Console.WriteLine(this.product.Length);
             Console.WriteLine("enter name of product");
             string tempstr = Console.ReadLine();
 
@@ -327,8 +329,8 @@ namespace hw3
             tempProduct.description = Console.ReadLine();
 
             product[tempSize] = tempProduct;
-
-            Console.WriteLine($"товар {product[tempSize].name} цена {product[tempSize].price} описание {product[tempSize].description} ");
+            Console.WriteLine();
+            Console.WriteLine($"товар {product[tempSize].name} \nцена {product[tempSize].price} \nописание {product[tempSize].description} ");
         }
 
         public void sellProduct(int productID)
@@ -338,11 +340,10 @@ namespace hw3
         }
 
 
-
-
         public void StartTask5()
         {
             marketInfo();
+            
             acceptProduct();
             sellProduct(1);
             getBalance();

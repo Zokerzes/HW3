@@ -273,13 +273,17 @@ namespace hw3
         string tel = "1233445678";
         string email = "mail@qwerty.biz";
         public double balance = 0;
+        public void marketInfo() 
+        {
+            Console.WriteLine($"название {this.name}\nадрес {this.path}\nописание {this.descrip}\nтелефон {this.tel}\nE-mail{this.email}\nбаланс магазина {this.balance}");
+        }
         public void setBalance(double _sb)
         {
             this.balance = _sb;
         }
         public void getBalance()
         {
-            Console.WriteLine(this.balance);
+            Console.WriteLine($"баланс магазина {this.balance}");
         }
         public void addBalance(double _addb)
         {
@@ -292,7 +296,7 @@ namespace hw3
         {
             public string name { get; set; }
             public string description { get; set; }
-            public double price; /*{ get { return price;} set { double price = double.Parse(Console.ReadLine()); } }*/
+            public double price;
 
             public Product() { }
 
@@ -338,9 +342,11 @@ namespace hw3
 
         public void StartTask5()
         {
+            marketInfo();
             acceptProduct();
-            sellProduct(0);
-            //getBalance();
+            sellProduct(1);
+            getBalance();
+            marketInfo();
         }
     }
 

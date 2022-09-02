@@ -11,6 +11,7 @@ using Microsoft.Win32;
 using System.Security.Cryptography.X509Certificates;
 using System.Linq.Expressions;
 using static System.Net.Mime.MediaTypeNames;
+using System.Diagnostics;
 
 namespace hw3
 {
@@ -64,9 +65,9 @@ namespace hw3
         string p;
         public bool polindrom(string p)
         {
-            for (int i = 0, j= p.Length; i < p.Length; i++,j--)
+            for (int i = 0, j = p.Length; i < p.Length; i++, j--)
             {
-                if (p[i] != p[j-1]) return false;
+                if (p[i] != p[j - 1]) return false;
             }
 
             return true;
@@ -91,7 +92,7 @@ namespace hw3
         string startStr, filtrStr;
         int[] startArr, filtrArr, resultArr;
 
-        
+
         public void StartTask3()
         {
             Console.WriteLine("введите массив значений через пробел):");
@@ -110,7 +111,7 @@ namespace hw3
             }
             Console.WriteLine("<- исходный массив");
             Console.WriteLine();
-            
+
 
             string[] filArr = filtrStr.Split(" ".ToCharArray());
             filtrArr = new int[filArr.Length];
@@ -128,15 +129,15 @@ namespace hw3
                 for (int j = 0; j < filtrArr.Length; j++)
                 {
                     if (startArr[i] == filtrArr[j])
-                    { 
+                    {
                         count++;
                         break;
                     }
                 }
             }
             resultArr = new int[startArr.Length - count];
-            
-            for (int i = 0, ii=0; i <  resultArr.Length; i++,ii++)
+
+            for (int i = 0, ii = 0; i < resultArr.Length; i++, ii++)
             {
                 bool flag = false;
                 for (int j = 0; j < filtrArr.Length; j++)
@@ -148,11 +149,11 @@ namespace hw3
                     }
                 }
                 if (flag) ii++;
-                resultArr[i]= startArr[ii];
+                resultArr[i] = startArr[ii];
             }
-            foreach(var i in resultArr)
-            { 
-                Console.Write(i+" ");
+            foreach (var i in resultArr)
+            {
+                Console.Write(i + " ");
             }
             Console.WriteLine("<- результат");
             Console.ReadLine();
@@ -165,50 +166,50 @@ namespace hw3
         сайта, ip адрес сайта. Реализуйте методы класса для ввода 
         данных, вывода данных, реализуйте доступ к отдельным 
         полям через методы класса. */
-        
+
         string nameOfSite, pathOfSite, descripOfSite, ipOfSite;
         // блок ввода
-        public void setName() 
+        public void setName()
         {
             Console.WriteLine("enter name of site");
-            this.nameOfSite=Console.ReadLine();
+            this.nameOfSite = Console.ReadLine();
         }
 
-        public void setPath() 
+        public void setPath()
         {
             Console.WriteLine("enter path of site");
-            this.pathOfSite=Console.ReadLine();
+            this.pathOfSite = Console.ReadLine();
         }
-        public void setDescription() 
+        public void setDescription()
         {
             Console.WriteLine("enter description of site");
-            this.descripOfSite=Console.ReadLine();
+            this.descripOfSite = Console.ReadLine();
         }
-        public void setIp() 
+        public void setIp()
         {
             Console.WriteLine("enter ip of site");
-            this.ipOfSite=Console.ReadLine();
+            this.ipOfSite = Console.ReadLine();
         }
-       
+
 
         //блок вывода
-         public string getName() 
+        public string getName()
         {
             Console.WriteLine($"name of site {this.nameOfSite}");
             return this.nameOfSite;
         }
 
-        public string getPath() 
+        public string getPath()
         {
             Console.WriteLine($"path of site {this.pathOfSite}");
             return this.pathOfSite;
         }
-        public string getDescription() 
+        public string getDescription()
         {
             Console.WriteLine($"description of site {this.descripOfSite}");
             return this.descripOfSite;
         }
-        public string getIp() 
+        public string getIp()
         {
             Console.WriteLine($"ip of site {this.ipOfSite}");
             return this.ipOfSite;
@@ -217,10 +218,10 @@ namespace hw3
         public void StartTask4()
         {
             int key;
-            do 
-            { 
-                 Console.WriteLine("записать:\n\tназвание - 1 \n\tпуть - 2 \n\tописание - 3\n\tip - 4"+
-                     "\nпрочитать:\n\tназвание - 5 \n\tпуть - 6 \n\tописание - 7\n\tip - 8");
+            do
+            {
+                Console.WriteLine("записать:\n\tназвание - 1 \n\tпуть - 2 \n\tописание - 3\n\tip - 4" +
+                    "\nпрочитать:\n\tназвание - 5 \n\tпуть - 6 \n\tописание - 7\n\tip - 8");
                 key = Convert.ToInt32(Console.ReadLine());
                 switch (key)
                 {
@@ -252,13 +253,13 @@ namespace hw3
                     default:
                         break;
                 }
-            }while (key>=1);
+            } while (key >= 1);
         }
     }
-    
-    
-   
-    class Task5_market
+
+
+
+    public class Task5_market
     {
         /*Создайте класс «Магазин». Необходимо хранить в 
         полях класса: название магазина, адрес, описание профиля магазина, контактный телефон, контактный e-mail. 
@@ -266,49 +267,83 @@ namespace hw3
         данных, реализуйте доступ к отдельным полям через 
         методы класса. продать товар, принять товар
         класс товар имя, цена*/
-        string name;
-        string path;
-        string descrip;
-        string tel;
-        string email;
-        double balance=0;
-        
+        string name = "Test";
+        string path = "www.qwerty.biz";
+        string descrip = "что то там";
+        string tel = "1233445678";
+        string email = "mail@qwerty.biz";
+        public double balance = 0;
+        public void setBalance(double _sb)
+        {
+            this.balance = _sb;
+        }
+        public void getBalance()
+        {
+            Console.WriteLine(this.balance);
+        }
+        public void addBalance(double _addb)
+        {
+            this.balance += _addb;
+        }
+        public Task5_market() { }
+
         //вложеный класс товар
-        class Product 
+        class Product
         {
             public string name { get; set; }
             public string description { get; set; }
-            public double price { get; set; }
+            public double price; /*{ get { return price;} set { double price = double.Parse(Console.ReadLine()); } }*/
 
-            Product() 
+            public Product() { }
+
+            public Product(string name, double price, string description)
             {
-                this.name = "prod0";
-                this.price = 0.0;
-                this.description = "something virtual values";
+                this.name = name;
+                this.price = price;
+                this.description = description;
             }
         }
-        
-        Product []product= new Product[1];
+
+        Product[] product = new Product[1];
 
         public void acceptProduct()
         {
             int tempSize = this.product.Length;  //текущая длина масства
-            Array.Resize(ref product,tempSize+1); //добавляем элемент
-            Console.WriteLine("enter name of product"); 
-            this.product[tempSize].name=Console.ReadLine().ToString(); //запись имени продукта
-            Console.WriteLine("enter price of product");
-            (this.product[this.product.Length-1]).price=Convert.ToDouble(Console.ReadLine());
-            Console.WriteLine("enter Description of product");
-            this.product[this.product.Length-1].description=Console.ReadLine();
+            Product tempProduct = new Product("name", 1.1, "description");
+            Console.WriteLine(this.product.Length);
+            Array.Resize(ref product, tempSize + 1); //добавляем элемент
+            Console.WriteLine(this.product.Length);
+            Console.WriteLine("enter name of product");
+            string tempstr = Console.ReadLine();
 
+            tempProduct.name = tempstr; //запись имени продукта
+            Console.WriteLine("enter price of product");
+            tempProduct.price = Convert.ToDouble(Console.ReadLine());
+            Console.WriteLine("enter Description of product");
+            tempProduct.description = Console.ReadLine();
+
+            product[tempSize] = tempProduct;
+
+            Console.WriteLine($"товар {product[tempSize].name} цена {product[tempSize].price} описание {product[tempSize].description} ");
         }
+
+        public void sellProduct(int productID)
+        {
+            double temp = product[productID].price;
+            this.balance += temp;
+        }
+
+
+
 
         public void StartTask5()
         {
             acceptProduct();
+            sellProduct(0);
+            //getBalance();
         }
     }
-    
+
     class HomeWork
     {
         public static void Main(string[] args)
@@ -338,7 +373,7 @@ namespace hw3
                     Task5_market task5 = new Task5_market();
                     task5.StartTask5();
                     break;
-                
+
                 default:
                     break;
 

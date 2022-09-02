@@ -75,7 +75,7 @@ namespace hw3
 
         public void StartTask2()
         {
-            Console.WriteLine("введите целое число (палиндром или нет):");
+            Console.WriteLine("введите строку (палиндром или нет):");
             p = Console.ReadLine();
             Console.WriteLine();
             Console.WriteLine(polindrom(p));
